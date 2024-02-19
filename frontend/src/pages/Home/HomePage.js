@@ -21,7 +21,7 @@ const reducer = (state, action) =>{
 
 export default function HomePage() {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const {foods,tags} = state; 
+    const {foods,tags} = state;
     const {searchTerm, tag} = useParams();
     useEffect(()=>{ 
         getAllTags().then(tags => dispatch({type: 'TAGS_LOADED', payload:tags }))
