@@ -11,7 +11,7 @@ import userRouter from './routers/user.router.js';
 import orderRouter from './routers/order.router.js';
 
 import { dbconnect } from './config/database.config.js';
-import { dirname } from 'path';
+import path, { dirname } from 'path';
 dbconnect();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -32,6 +32,7 @@ app.use('/api/users',userRouter);
 app.use('/api/orders',orderRouter);
 
 // const publicFolder = __dirname + '/' + 'public';
+
 const publicFolder = path.join(__dirname,'public');
 app.use(express.static(publicFolder));
 

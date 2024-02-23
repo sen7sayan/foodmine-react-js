@@ -14,7 +14,7 @@ handler(async(req,res)=>{
     try {
         const order = req.body;
       if(order.items.length<=0) res.status(BAD_REQUEST).send('Cart is empty!!');
-      console.log(req.user);
+      
       await OrderModel.deleteOne({
           user: req.user.id,
           status: OrderStatus.NEW,
