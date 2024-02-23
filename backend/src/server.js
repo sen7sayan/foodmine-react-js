@@ -6,7 +6,7 @@ import cors from 'cors';
 import foodRouter from './routers/food.router.js';
 import userRouter from './routers/user.router.js';
 import orderRouter from './routers/order.router.js';
-import uploadRouter from './routers/upload.router.js';
+
 
 import { dbconnect } from './config/database.config.js';
 import path, { dirname } from 'path';

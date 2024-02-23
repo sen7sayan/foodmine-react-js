@@ -3,7 +3,7 @@ import { UNAUTHORIZED } from '../constants/httpStatus.js';
 
 
 export default (req, res, next) => {
-  // console.log('xxxxxxxxx');
+  
   const token = req.headers.access_token;
   // console.log(token);
   if (!token) return res.status(UNAUTHORIZED).send();
@@ -12,7 +12,7 @@ export default (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     // console.log(decoded);
     req.user = decoded;
-    console.log(decoded);
+    
   } catch (error) {
     console.log(error);
     res.status(UNAUTHORIZED).send();
