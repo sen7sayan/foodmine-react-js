@@ -53,7 +53,7 @@ router.get(
      try {
      
         const order = await getNewOrderForCurrentUser(req);
-       
+        console.log(req.user.id);
         if (order){
          return res.send(order);
         } 
